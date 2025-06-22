@@ -1,11 +1,11 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Navigation from "./components/Navigation"
 import Dashboard from "./components/Dashboard"
 import Progress from "./components/Progress"
 import Account from "./components/Account"
+
+const basename = "/DrinkQ";
 
 // Mock data for smart water bottle simulation
 const generateMockData = () => {
@@ -57,7 +57,7 @@ export default function App() {
   }
 
   return (
-    <Router>
+    <Router basename={basename}>
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50">
         <Navigation />
         <main className="container mx-auto px-4 py-8">
